@@ -22,14 +22,14 @@ class StreamingService{
             return Description;
         }
     //Default constructor
-    StreamingService();
+    StreamingService() {}
     //Overloaded constructor
-    StreamingService(string Title, string Description);
+    StreamingService(string Title, string Description) : Title(Title), Description(Description){}
 
-    virtual void PlayFunctionality();
+    virtual void PlayFunctionality() const = 0;
 
-    void detailsFunctionality(StreamingService obj){
-        cout << "Title: " << obj.getTitle() << "\n";
-        cout << "Descrpition: " << obj.getDescription() << "\n";
+    void detailsFunctionality(){
+        cout << "Title: " << Title << "\n";
+        cout << "Descrpition: " << Description << "\n";
     }
 };
